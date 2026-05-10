@@ -1,12 +1,26 @@
 # Themes
 
-Personal theme experiments.
+Personal theme collection for editor, shell, and terminal styling. This repository is not specific to one theme family; each theme should live in its own top-level folder, with shared assets in top-level support folders.
+
+Current theme families:
+
+- `wheatgrass/` - Wheatgrass-inspired VS Code and Oh My Zsh themes
+
+Future theme families can follow the same pattern:
+
+```text
+<theme-name>/
+  install.sh
+  omz/
+  vscode/
+  ...
+```
 
 ## Layout
 
 ```text
-fonts/       Shared font bundles
-wheatgrass/  Wheatgrass-inspired themes for VS Code and Oh My Zsh
+fonts/       Shared font bundles usable by any theme
+wheatgrass/  Wheatgrass-inspired theme family
 ```
 
 ## Wheatgrass
@@ -49,7 +63,7 @@ IoskeleyMono-Bold.ttf
 IoskeleyMono-BoldItalic.ttf
 ```
 
-The full upstream release also includes hinted duplicates, condensed and semi-condensed widths, and extra weights such as Thin, Light, Medium, SemiBold, ExtraBold, and Black. Those are useful for full font packaging, but unnecessary for this theme repo.
+The full upstream release also includes hinted duplicates, condensed and semi-condensed widths, and extra weights such as Thin, Light, Medium, SemiBold, ExtraBold, and Black. Those are useful for full font packaging, but unnecessary for this repo's editor/shell theme use.
 
 ### Oh My Zsh
 
