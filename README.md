@@ -9,6 +9,7 @@ The colors are based on GNU Emacs' `wheatgrass-theme.el`: wheat foreground, Spri
 ```text
 omz/      Oh My Zsh theme
 vscode/   VS Code color theme extension
+fonts/    Bundled Ioskeley Mono core faces
 install.sh
 ```
 
@@ -29,6 +30,17 @@ Useful options:
 ./install.sh --zshrc
 ./install.sh --fonts
 ```
+
+The bundled font subset includes only the normal-width, unhinted core faces:
+
+```text
+IoskeleyMono-Regular.ttf
+IoskeleyMono-Italic.ttf
+IoskeleyMono-Bold.ttf
+IoskeleyMono-BoldItalic.ttf
+```
+
+The full upstream release also includes hinted duplicates, condensed and semi-condensed widths, and extra weights such as Thin, Light, Medium, SemiBold, ExtraBold, and Black. Those are useful for full font packaging, but unnecessary for this theme repo.
 
 ## Oh My Zsh
 

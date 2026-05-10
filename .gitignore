@@ -1,4 +1,7 @@
-fonts/
+fonts/*
+!fonts/ioskeley-mono/
+!fonts/ioskeley-mono/*.ttf
+!fonts/ioskeley-mono/LICENSE.txt
 *.vsix
 vscode/.vsixmanifest
 node_modules/

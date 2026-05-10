@@ -54,10 +54,10 @@ install_fonts() {
     return
   fi
 
-  FONT_DIR="$ROOT_DIR/fonts/IoskeleyMono/Normal/Unhinted"
+  FONT_DIR="$ROOT_DIR/fonts/ioskeley-mono"
   if [ ! -d "$FONT_DIR" ]; then
     echo "missing extracted Ioskeley Mono fonts: $FONT_DIR" >&2
-    echo "download/extract IoskeleyMono.zip first, or skip --fonts" >&2
+    echo "add bundled fonts first, or skip --fonts" >&2
     exit 1
   fi
 
