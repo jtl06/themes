@@ -2,6 +2,7 @@
 set -eu
 
 ROOT_DIR=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+REPO_DIR=$(CDPATH= cd -- "$ROOT_DIR/.." && pwd)
 OMZ_THEME_SRC="$ROOT_DIR/omz/wheatgrass.zsh-theme"
 OMZ_THEME_DST="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/wheatgrass.zsh-theme"
 VSCODE_SRC="$ROOT_DIR/vscode"
@@ -54,7 +55,7 @@ install_fonts() {
     return
   fi
 
-  FONT_DIR="$ROOT_DIR/fonts/ioskeley-mono"
+  FONT_DIR="$REPO_DIR/fonts/ioskeley-mono"
   if [ ! -d "$FONT_DIR" ]; then
     echo "missing extracted Ioskeley Mono fonts: $FONT_DIR" >&2
     echo "add bundled fonts first, or skip --fonts" >&2

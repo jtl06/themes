@@ -1,21 +1,30 @@
-# Wheatgrass Themes
+# Themes
 
-Personal Wheatgrass-inspired themes for VS Code and Oh My Zsh.
-
-The colors are based on GNU Emacs' `wheatgrass-theme.el`: wheat foreground, SpringGreen comments, turquoise constants, pale-green functions, dark-khaki strings, aquamarine types, yellow-green variables, and salmon/orange diagnostics.
+Personal theme experiments.
 
 ## Layout
 
 ```text
-omz/      Oh My Zsh theme
-vscode/   VS Code color theme extension
-fonts/    Bundled Ioskeley Mono core faces
-install.sh
+fonts/       Shared font bundles
+wheatgrass/  Wheatgrass-inspired themes for VS Code and Oh My Zsh
 ```
 
-## Install
+## Wheatgrass
+
+The Wheatgrass colors are based on GNU Emacs' `wheatgrass-theme.el`: wheat foreground, SpringGreen comments, turquoise constants, pale-green functions, dark-khaki strings, aquamarine types, yellow-green variables, and salmon/orange diagnostics.
+
+### Layout
+
+```text
+wheatgrass/omz/      Oh My Zsh theme
+wheatgrass/vscode/   VS Code color theme extension
+wheatgrass/install.sh
+```
+
+### Install
 
 ```sh
+cd wheatgrass
 ./install.sh
 ```
 
@@ -42,7 +51,7 @@ IoskeleyMono-BoldItalic.ttf
 
 The full upstream release also includes hinted duplicates, condensed and semi-condensed widths, and extra weights such as Thin, Light, Medium, SemiBold, ExtraBold, and Black. Those are useful for full font packaging, but unnecessary for this theme repo.
 
-## Oh My Zsh
+### Oh My Zsh
 
 Enable manually with:
 
@@ -59,7 +68,7 @@ Prompt features:
 - slow command duration
 - root/error prompt coloring
 
-## VS Code
+### VS Code
 
 After install, reload VS Code and select:
 

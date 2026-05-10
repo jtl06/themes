@@ -3,6 +3,6 @@ fonts/*
 !fonts/ioskeley-mono/*.ttf
 !fonts/ioskeley-mono/LICENSE.txt
 *.vsix
-vscode/.vsixmanifest
+*/vscode/.vsixmanifest
 node_modules/
 .DS_Store
