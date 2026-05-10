@@ -1,0 +1,36 @@
+{
+	"name": "wheatgrass-theme",
+	"displayName": "Wheatgrass Theme",
+	"description": "A VS Code theme inspired by Emacs' Wheatgrass.",
+	"version": "0.0.1",
+	"publisher": "jacenli",
+	"engines": {
+		"vscode": "^1.96.2"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Wheatgrass",
+				"uiTheme": "vs-dark",
+				"path": "./themes/wheatgrass-color-theme.json"
+			}
+		]
+	},
+	"license": "MIT",
+	"keywords": [
+		"theme",
+		"wheatgrass",
+		"emacs-inspired",
+		"dark"
+	],
+	"__metadata": {
+		"isApplicationScoped": false,
+		"installedTimestamp": 1736658185300,
+		"pinned": true,
+		"source": "vsix",
+		"size": 7145
+	}
+}

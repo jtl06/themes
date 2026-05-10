@@ -1,0 +1,5 @@
+fonts/
+*.vsix
+vscode/.vsixmanifest
+node_modules/
+.DS_Store
