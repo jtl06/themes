@@ -4,7 +4,7 @@ Personal theme collection for editor, shell, and terminal styling. This reposito
 
 Current theme families:
 
-- `wheatgrass/` - Wheatgrass-inspired VS Code and Oh My Zsh themes
+- `wheatgrass/` - Wheatgrass-inspired VS Code, iTerm2, and Oh My Zsh themes
 
 Future theme families can follow the same pattern:
 
@@ -30,6 +30,7 @@ The Wheatgrass colors are based on GNU Emacs' `wheatgrass-theme.el`: wheat foreg
 ### Layout
 
 ```text
+wheatgrass/iterm2/   iTerm2 color preset
 wheatgrass/omz/      Oh My Zsh theme
 wheatgrass/vscode/   VS Code color theme extension
 wheatgrass/install.sh
@@ -42,7 +43,7 @@ cd wheatgrass
 ./install.sh
 ```
 
-By default this installs the OMZ theme and the VS Code theme. It does not edit `~/.zshrc`.
+By default this installs the OMZ theme, the VS Code theme, and the iTerm2 color preset. It does not edit `~/.zshrc`.
 
 Useful options:
 
@@ -50,6 +51,7 @@ Useful options:
 ./install.sh --all      # install themes and set ZSH_THEME="wheatgrass"
 ./install.sh --omz
 ./install.sh --vscode
+./install.sh --iterm2
 ./install.sh --zshrc
 ./install.sh --fonts
 ```
@@ -89,3 +91,13 @@ After install, reload VS Code and select:
 ```text
 Wheatgrass
 ```
+
+### iTerm2
+
+After install, select the color preset in:
+
+```text
+Settings > Profiles > Colors > Color Presets > Wheatgrass
+```
+
+You can also import `wheatgrass/iterm2/Wheatgrass.itermcolors` manually from iTerm2's color preset menu.

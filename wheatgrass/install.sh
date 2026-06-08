@@ -7,6 +7,8 @@ OMZ_THEME_SRC="$ROOT_DIR/omz/wheatgrass.zsh-theme"
 OMZ_THEME_DST="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/wheatgrass.zsh-theme"
 VSCODE_SRC="$ROOT_DIR/vscode"
 VSCODE_EXT_DST="$HOME/.vscode/extensions/jacenli.wheatgrass-theme-0.0.1"
+ITERM2_THEME_SRC="$ROOT_DIR/iterm2/Wheatgrass.itermcolors"
+ITERM2_THEME_DST="$HOME/Library/Application Support/iTerm2/ColorPresets/Wheatgrass.itermcolors"
 ZSHRC="$HOME/.zshrc"
 
 usage() {
@@ -17,11 +19,12 @@ Options:
   --all             Install OMZ theme, VS Code theme, and update ~/.zshrc.
   --omz             Install the Oh My Zsh theme.
   --vscode          Install the VS Code theme by copying into ~/.vscode/extensions.
+  --iterm2          Install the iTerm2 color preset.
   --zshrc           Set ZSH_THEME="wheatgrass" in ~/.zshrc.
   --fonts           Install bundled Ioskeley Mono fonts into ~/Library/Fonts on macOS.
   --help            Show this help.
 
-With no options, installs OMZ and VS Code themes but does not edit ~/.zshrc.
+With no options, installs OMZ, VS Code, and iTerm2 themes but does not edit ~/.zshrc.
 EOF
 }
 
@@ -47,6 +50,23 @@ install_vscode() {
   cp -R "$VSCODE_SRC" "$VSCODE_EXT_DST"
   echo "installed VS Code theme -> $VSCODE_EXT_DST"
   echo "reload VS Code and select theme: Wheatgrass"
+}
+
+install_iterm2() {
+  if [ "$(uname -s)" != "Darwin" ]; then
+    echo "iTerm2 preset install is macOS-only; skipping"
+    return
+  fi
+
+  if [ ! -f "$ITERM2_THEME_SRC" ]; then
+    echo "missing iTerm2 theme: $ITERM2_THEME_SRC" >&2
+    exit 1
+  fi
+
+  mkdir -p "$(dirname "$ITERM2_THEME_DST")"
+  cp "$ITERM2_THEME_SRC" "$ITERM2_THEME_DST"
+  echo "installed iTerm2 color preset -> $ITERM2_THEME_DST"
+  echo "select it in iTerm2: Settings > Profiles > Colors > Color Presets > Wheatgrass"
 }
 
 install_fonts() {
@@ -90,12 +110,14 @@ update_zshrc() {
 
 DO_OMZ=0
 DO_VSCODE=0
+DO_ITERM2=0
 DO_ZSHRC=0
 DO_FONTS=0
 
 if [ "$#" -eq 0 ]; then
   DO_OMZ=1
   DO_VSCODE=1
+  DO_ITERM2=1
 fi
 
 while [ "$#" -gt 0 ]; do
@@ -103,6 +125,7 @@ while [ "$#" -gt 0 ]; do
     --all)
       DO_OMZ=1
       DO_VSCODE=1
+      DO_ITERM2=1
       DO_ZSHRC=1
       ;;
     --omz)
@@ -110,6 +133,9 @@ while [ "$#" -gt 0 ]; do
       ;;
     --vscode)
       DO_VSCODE=1
+      ;;
+    --iterm2)
+      DO_ITERM2=1
       ;;
     --zshrc)
       DO_ZSHRC=1
@@ -132,5 +158,6 @@ done
 
 [ "$DO_OMZ" -eq 1 ] && install_omz
 [ "$DO_VSCODE" -eq 1 ] && install_vscode
+[ "$DO_ITERM2" -eq 1 ] && install_iterm2
 [ "$DO_FONTS" -eq 1 ] && install_fonts
 [ "$DO_ZSHRC" -eq 1 ] && update_zshrc

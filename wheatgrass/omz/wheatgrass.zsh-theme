@@ -118,9 +118,9 @@ _wheatgrass_status() {
   if [[ $EUID -eq 0 ]]; then
     print -n "%{${_wheatgrass_color_red}%}#%{${_wheatgrass_reset}%}"
   elif [[ $code -eq 0 ]]; then
-    print -n "%{${_wheatgrass_color_green}%}>%{${_wheatgrass_reset}%}"
+    print -n "%{${_wheatgrass_color_green}%}\$%{${_wheatgrass_reset}%}"
   else
-    print -n "%{${_wheatgrass_color_red}%}${code}>%{${_wheatgrass_reset}%}"
+    print -n "%{${_wheatgrass_color_red}%}${code}\$%{${_wheatgrass_reset}%}"
   fi
 }
 
