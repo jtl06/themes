@@ -17,7 +17,37 @@
 				"uiTheme": "vs-dark",
 				"path": "./themes/wheatgrass-color-theme.json"
 			}
-		]
+		],
+		"configurationDefaults": {
+			"breadcrumbs.enabled": true,
+			"editor.folding": true,
+			"editor.glyphMargin": true,
+			"editor.hideCursorInOverviewRuler": true,
+			"editor.lineDecorationsWidth": 0,
+			"editor.lineNumbers": "on",
+			"editor.minimap.enabled": true,
+			"editor.overviewRulerBorder": false,
+			"editor.padding.bottom": 0,
+			"editor.padding.top": 0,
+			"editor.scrollBeyondLastLine": false,
+			"editor.scrollbar.horizontalScrollbarSize": 8,
+			"editor.scrollbar.verticalScrollbarSize": 8,
+			"editor.stickyScroll.enabled": false,
+			"window.commandCenter": false,
+			"window.density.editorTabHeight": "compact",
+			"window.density.statusBarHeight": "compact",
+			"workbench.activityBar.location": "default",
+			"workbench.editor.alwaysShowEditorActions": true,
+			"workbench.editor.editorActionsLocation": "default",
+			"workbench.editor.pinnedTabSizing": "compact",
+			"workbench.editor.showIcons": false,
+			"workbench.editor.tabCloseButton": "off",
+			"workbench.editor.tabSizing": "shrink",
+			"workbench.layoutControl.enabled": false,
+			"workbench.sideBar.location": "left",
+			"workbench.tree.enableStickyScroll": false,
+			"workbench.tree.indent": 8
+		}
 	},
 	"license": "MIT",
 	"keywords": [

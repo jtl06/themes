@@ -92,6 +92,29 @@ After install, reload VS Code and select:
 Wheatgrass
 ```
 
+The theme extension also ships compact UI defaults for a denser workspace:
+
+```json
+"breadcrumbs.enabled": true,
+"editor.folding": true,
+"editor.glyphMargin": true,
+"editor.lineDecorationsWidth": 0,
+"editor.lineNumbers": "on",
+"editor.minimap.enabled": true,
+"workbench.activityBar.location": "default",
+"workbench.editor.alwaysShowEditorActions": true,
+"workbench.editor.editorActionsLocation": "default",
+"workbench.editor.showIcons": false,
+"workbench.editor.tabCloseButton": "off",
+"workbench.editor.tabSizing": "shrink",
+"workbench.sideBar.location": "left",
+"workbench.tree.indent": 8
+```
+
+Many Wheatgrass UI surfaces use alpha colors for a lighter, more translucent feel. VS Code themes cannot force true OS-level window transparency; that requires a separate VS Code transparency/custom CSS extension.
+
+VS Code does not expose a native setting for hover-only sidebars or Activity Bars. That behavior also requires custom CSS or an extension.
+
 ### iTerm2
 
 After install, select the color preset in:

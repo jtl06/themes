@@ -161,3 +161,5 @@ done
 [ "$DO_ITERM2" -eq 1 ] && install_iterm2
 [ "$DO_FONTS" -eq 1 ] && install_fonts
 [ "$DO_ZSHRC" -eq 1 ] && update_zshrc
+
+exit 0
