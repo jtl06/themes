@@ -30,9 +30,10 @@ The Wheatgrass colors are based on GNU Emacs' `wheatgrass-theme.el`: wheat foreg
 ### Layout
 
 ```text
-wheatgrass/iterm2/   iTerm2 color preset
+wheatgrass/iterm2/   iTerm2 color preset, WG profile, and UI preferences
 wheatgrass/omz/      Oh My Zsh theme
 wheatgrass/vscode/   VS Code color theme extension
+wheatgrass/vscode-profile/  Portable VS Code profile
 wheatgrass/install.sh
 ```
 
@@ -43,7 +44,7 @@ cd wheatgrass
 ./install.sh
 ```
 
-By default this installs the OMZ theme, the VS Code theme, and the iTerm2 color preset. It does not edit `~/.zshrc`.
+By default this installs the OMZ theme, the VS Code theme, and the complete iTerm2 `WG` profile. It does not edit `~/.zshrc`.
 
 Useful options:
 
@@ -51,6 +52,7 @@ Useful options:
 ./install.sh --all      # install themes and set ZSH_THEME="wheatgrass"
 ./install.sh --omz
 ./install.sh --vscode
+./install.sh --vscode-profile
 ./install.sh --iterm2
 ./install.sh --zshrc
 ./install.sh --fonts
@@ -115,12 +117,60 @@ Many Wheatgrass UI surfaces use alpha colors for a lighter, more translucent fee
 
 VS Code does not expose a native setting for hover-only sidebars or Activity Bars. That behavior also requires custom CSS or an extension.
 
-### iTerm2
+#### VS Code Profile
 
-After install, select the color preset in:
+The portable `jtl` profile snapshot includes:
 
-```text
-Settings > Profiles > Colors > Color Presets > Wheatgrass
+- settings and compact layout preferences
+- sidebar, panel, Activity Bar, and view visibility/size state
+- keybindings
+- the extension list with captured versions
+- Wheatgrass as the selected color theme
+- Ioskeley Mono editor and terminal fonts
+
+Install it into an existing VS Code profile named `jtl`:
+
+```sh
+cd wheatgrass
+./install.sh --vscode-profile
 ```
 
-You can also import `wheatgrass/iterm2/Wheatgrass.itermcolors` manually from iTerm2's color preset menu.
+Use a different existing profile name by running:
+
+```sh
+./vscode-profile/install.sh <profile-name>
+```
+
+Quit VS Code before running the installer. It backs up the destination profile's `settings.json`, `keybindings.json`, and layout database before applying the portable layout keys.
+
+The repository does not contain the raw VS Code database, open editors, recent files, authentication state, workspace history, or unrelated transient window/session state.
+
+### iTerm2
+
+The iTerm2 export includes the complete portable `WG` profile:
+
+- Wheatgrass ANSI and UI colors
+- Ioskeley Mono 13
+- 6% profile transparency
+- background blur with radius 6.22
+- 80x30 initial dimensions
+- cursor, scrollback, keyboard, spacing, and terminal behavior
+- visible tabs and scrollbar
+- tab style, split dimming, quit behavior, and window numbering
+
+Install it with:
+
+```sh
+cd wheatgrass
+./install.sh --iterm2
+```
+
+Quit iTerm2 before running the installer. Reopen it afterward, then select:
+
+```text
+Settings > Profiles > WG
+```
+
+The standalone color preset remains available at `wheatgrass/iterm2/Wheatgrass.itermcolors`.
+
+The export intentionally excludes iTerm2 AI configuration, recent paths, installation identifiers, update history, saved window coordinates, and other transient machine state.
